@@ -7,18 +7,18 @@ class Particle{
         this.x = x;
         this.y=y;
         this.r=r;
-        this.color = 255
+        this.color = 255;
         this.body=Bodies.circle(this.x,this.y,this.r/2,options)
         World.add(world,this.body);
     }
     display(){
      var pos = this.body.position;
-    push()
+    push();
     translate(pos.x,pos.y)
     rotate(this.body.angle)
     ellipseMode(CENTER) 
     ellipse(0,0,this.r,this.r)
    fill(this.color)
-   pop()
+   pop();
   }    
 }

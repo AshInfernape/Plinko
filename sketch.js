@@ -29,7 +29,7 @@ function setup() {
     s1.push(new Particle(b,0+70,10))
   }
 
-  for(d = d+75; d<= width; d=d+70){
+  for(d = 75; d<= width; d=d+70){
     s2.push(new Particle(d,0+140,10))
   }
   
@@ -65,8 +65,15 @@ function draw() {
   for(var c=0; c<divisions.length; c++){
     divisions[c].display();
   }
-  for(e = 0; e < divisions.length; e++){
-    s2[e].display();
+  console.log(s2)
+  console.log(divisions.length)
+
+ for(var l = 0; l < divisions.length; l++){
+     s1[l].display();
+ }
+
+ for(var e = 0; e < divisions.length; e++){
+     s2[e].display();
   }
   for(var g=0; g < divisions.length; g++){
     s3[g].display();

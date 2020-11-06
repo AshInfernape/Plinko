@@ -14,46 +14,51 @@ var p1;
 var divisionHeight = 300;
 
 function setup() {
-  createCanvas(480,800);
+  createCanvas(600,800);
+ // console.log(s2)
   engine = Engine.create();
   world = engine.world;
   ground = new Ground(width/2,height-10,width,10);
   wall1 = new Ground(10,700,20,1400)
-  wall2 = new Ground(790,700,20,1400)
+  wall2 = new Ground(590,700,20,1400)
   
   for(a=0; a <=width; a=a+80){
-    divisions.push(new Particle(a,height,10,divisionHeight )) 
+    divisions.push(new Division(a,height,10,divisionHeight)) 
    }
  
-  for(b = 40; b<=width; b=b+70){
+  for(var b = 40; b<=width; b=b+70){
     s1.push(new Particle(b,0+70,10))
   }
-
-  for(d = 75; d<= width; d=d+70){
-    s2.push(new Particle(d,0+140,10))
+  for(var b = 25; b<=width; b=b+70){
+    s2.push(new Particle(b,0+140,10))
   }
+
+  //for(d = 75; d<= width; d=d+70){
+    //s2.push(new Particle(d,0+140,10))
+ // }
   
   
- for(f=40;f<=width;f =f+70){
+ for( f=60;f<=width;f =f+70){
    s3.push(new Particle(f,0+210,10))
  }
-
- for(h = 75; h <= width; h = h+70){
+ 
+ for(h = 50; h <= width; h = h+70){
    s4.push(new Particle(h,0+280,10))
  }
+
 
  Engine.run(engine)
 }
 
 function draw() {
-  background("#ff6600");  
+  background("black");  
   Engine.update(engine)
   ground.display();
   wall1.display();
   wall2.display();
  
   if(frameCount%60 === 0){
-    plinkos.push(new plinkos((random(100,700)),10,70))
+    plinkos.push(new Plinko((random(100,700)),10,20))
    }
 
    for(var j=0; j<plinkos.length; j++){
@@ -65,20 +70,22 @@ function draw() {
   for(var c=0; c<divisions.length; c++){
     divisions[c].display();
   }
-  console.log(s2)
-  console.log(divisions.length)
+  //console.log(s2)
+ // console.log(divisions.length)
 
  for(var l = 0; l < divisions.length; l++){
      s1[l].display();
  }
-
- for(var e = 0; e < divisions.length; e++){
-     s2[e].display();
-  }
+ for(var l = 0; l < divisions.length; l++){
+  s2[l].display();
+}
+ //for(var e = 0; e < divisions.length; e++){
+   //  s2[e].display();
+ // }
   for(var g=0; g < divisions.length; g++){
     s3[g].display();
   }
-  for(var j=0; j < divisions.length; j++){
+ for(var j=0; j < divisions.length; j++){
     s4[j].display();
   }
 }

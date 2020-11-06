@@ -9,17 +9,18 @@ class Plinko{
           this.x = x;
           this.y=y;
           this.r=r;
+        
           this.body=Bodies.circle(this.x,this.y,this.r/2,options)
           World.add(world,this.body)
        }
-         display(){
+       display(){
            var pos = this.body.position;
            push()
            translate(pos.x,pos.y)
            rotate(this.body.angle)
            ellipseMode(CENTER) 
            ellipse(0,0,this.r,this.r)
-          fill("#ff6600")
+           fill("blue");
           pop()
          }    
           }
